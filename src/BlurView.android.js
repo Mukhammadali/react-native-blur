@@ -98,5 +98,3 @@ BlurView.defaultProps = {
 };
 
 const NativeBlurView = requireNativeComponent('BlurView', BlurView);
-
-module.exports = BlurView;

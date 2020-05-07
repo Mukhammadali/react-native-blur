@@ -5,5 +5,3 @@ export default class VibrancyView extends React.Component {
     console.error('VibrancyView is not implemented on Android');
   }
 }
-
-module.exports = VibrancyView;
