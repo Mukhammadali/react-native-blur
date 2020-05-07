@@ -1,4 +1,5 @@
-import {Component, PropTypes} from 'react';
+import {Component} from 'react';
+import PropTypes from 'prop-types';
 import {View, Platform, requireNativeComponent} from 'react-native';
 
 // This are helper functions that are used to simulate the blur effect on iOS
@@ -13,7 +14,9 @@ const OVERLAY_COLORS = {
 export const overlayColorForProps = (props) => {
   const {overlayColor, blurType} = props || this.props;
 
-  if (overlayColor != null) return overlayColor;
+  if (overlayColor != null) {
+    return overlayColor;
+  }
   return OVERLAY_COLORS[blurType] || OVERLAY_COLORS.dark;
 };
 
@@ -29,7 +32,9 @@ export const blurRadiusForProps = (props, {limit} = {}) => {
     }
     return blurRadius;
   }
-  if (blurAmount == null) return 0;
+  if (blurAmount == null) {
+    return 0;
+  }
 
   // iOS seems to use a slightly different blurring algorithm (or scale?).
   // Android/web blurRadius is approximately 80% of blurAmount.
@@ -56,7 +61,9 @@ export class BlurView extends Component {
 
   updateViewRefStyleProperties() {
     const {viewRef, transitionDuration} = this.props;
-    if (viewRef == null) return;
+    if (viewRef == null) {
+      return;
+    }
 
     if (this.props.viewRef.setNativeProps === undefined) {
       throw new Error(
@@ -91,8 +98,6 @@ export class BlurView extends Component {
 }
 
 BlurView.propTypes = {
-  ...ViewPropTypes,
-
   blurAmount: PropTypes.number,
   blurType: PropTypes.oneOf(['dark', 'light', 'xlight']),
 
