@@ -1,6 +1,6 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {View, Platform, requireNativeComponent} from 'react-native';
+import {View, Platform} from 'react-native';
 
 // This are helper functions that are used to simulate the blur effect on iOS
 // on other platforms (Android and web)
@@ -11,7 +11,7 @@ const OVERLAY_COLORS = {
   dark: 'rgba(16, 12, 12, 0.64)',
 };
 
-export const overlayColorForProps = (props) => {
+const overlayColorForProps = (props) => {
   const {overlayColor, blurType} = props || this.props;
 
   if (overlayColor != null) {
@@ -20,7 +20,7 @@ export const overlayColorForProps = (props) => {
   return OVERLAY_COLORS[blurType] || OVERLAY_COLORS.dark;
 };
 
-export const blurRadiusForProps = (props, {limit} = {}) => {
+const blurRadiusForProps = (props, {limit} = {}) => {
   const {blurRadius, blurAmount} = props;
 
   if (blurRadius != null) {
@@ -41,7 +41,7 @@ export const blurRadiusForProps = (props, {limit} = {}) => {
   return Math.round(blurAmount * 0.8);
 };
 
-export class BlurView extends Component {
+export default class BlurView extends Component {
   componentWillMount() {
     this.updateViewRefStyleProperties();
   }

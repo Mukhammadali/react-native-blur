@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {requireNativeComponent, StyleSheet} from 'react-native';
 
-class VibrancyView extends Component {
+export default class VibrancyView extends Component {
   setNativeProps = (nativeProps) => {
     if (this._root) {
       this._root.setNativeProps(nativeProps);

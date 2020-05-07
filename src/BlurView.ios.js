@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-class BlurView extends Component {
+export default class BlurView extends Component {
   setNativeProps = (nativeProps) => {
     if (this._root) {
       this._root.setNativeProps(nativeProps);
@@ -63,5 +63,3 @@ BlurView.defaultProps = {
 };
 
 const NativeBlurView = requireNativeComponent('BlurView', BlurView);
-
-module.exports = BlurView;

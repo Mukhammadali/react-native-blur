@@ -14,7 +14,7 @@ const OVERLAY_COLORS = {
   dark: 'rgba(16, 12, 12, 0.64)',
 };
 
-class BlurView extends Component {
+export default class BlurView extends Component {
   componentDidMount() {
     DeviceEventEmitter.addListener('ReactNativeBlurError', (message) => {
       throw new Error(`[ReactNativeBlur]: ${message}`);
