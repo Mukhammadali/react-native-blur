@@ -43,20 +43,20 @@ const blurRadiusForProps = (props, {limit} = {}) => {
 
 export default class BlurView extends Component {
   componentWillMount() {
-    this.updateViewRefStyleProperties();
+    // this.updateViewRefStyleProperties();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (
-      blurRadiusForProps(this.props) !== blurRadiusForProps(nextProps) ||
-      this.props.transitionDuration !== nextProps.transitionDuration
-    ) {
-      this.updateViewRefStyleProperties();
-    }
+    // if (
+    //   blurRadiusForProps(this.props) !== blurRadiusForProps(nextProps) ||
+    //   this.props.transitionDuration !== nextProps.transitionDuration
+    // ) {
+    //   this.updateViewRefStyleProperties();
+    // }
   }
 
   componentWillUnmount() {
-    this.removeViewRefStyleProperties();
+    // this.removeViewRefStyleProperties();
   }
 
   updateViewRefStyleProperties() {
